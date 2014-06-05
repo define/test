@@ -1,0 +1,1 @@
+attributes :id, :name, :is_completed, :priority, :created_date, :modified_date, :completed_date
