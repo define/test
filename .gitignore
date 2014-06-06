@@ -31,3 +31,4 @@ config/secrets.yml
 /lib/generators
 /.idea
 .idea/*
+.idea/workspace.xml

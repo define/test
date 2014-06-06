@@ -2,4 +2,9 @@
 
 	App = new Marionette.Application
 
-App
+	App.addRegions
+		headerReagion: "#header-region"
+		mainRegion:" #main-region"
+		footerRegion: "#footer-region"
+
+	App
