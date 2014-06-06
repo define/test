@@ -1,6 +1,7 @@
 	*.rbc
 capybara-*.html
 .rspec
+.idea
 /db/*.sqlite3
 /public/system
 /coverage/
@@ -28,4 +29,3 @@ config/secrets.yml
 /tmp
 .DS_Store
 /lib/generators
-.idea/dataSources.xml
