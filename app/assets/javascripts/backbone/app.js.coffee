@@ -1,11 +1,16 @@
 @Test = do (Backbone, Marionette) ->
 
+	@
+
 	App = new Marionette.Application
 
 	App.addRegions
-		headerReagion: "#header-region"
+		headerRegion: "#header-region"
 		mainRegion:" #main-region"
 		footerRegion: "#footer-region"
+
+	App.addInitializer ->
+		App.module("FooterApp").start()
 
 	App.on "initialize:after", ->
 		if Backbone.history
