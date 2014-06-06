@@ -1,10 +1,10 @@
-@Test.module "FooterApp.Show", (Show, App, Backbone, Marionette, $, _) ->
+@Test.module "HeaderApp.Show", (Show, App, Backbone, Marionette, $, _) ->
 
 	Show.Controller =
 
 		show: ->
-			footerView = @getFooterView()
-			App.footerRegion.show() footerView
+			headerView = @getHeaderView()
+			App.headerRegion.show(headerView)
 
-		getFooterView: ->
-			new Show.Footer
+		getHeaderView: ->
+			new Show.Header
