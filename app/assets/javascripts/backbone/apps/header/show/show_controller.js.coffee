@@ -15,7 +15,6 @@
 				{ name: "Link3" }
 			]
 
-
 		getHeaderView: (links) ->
-			new Show.Header
+			new Show.Headers
 				collection: links
