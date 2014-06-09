@@ -3,17 +3,10 @@
 	Show.Controller =
 
 		show: ->
-			links = @getLinkCollection()
+			links = App.request "header:entities"
 
 			headerView = @getHeaderView links
 			App.headerRegion.show(headerView)
-
-		getLinkCollection: ->
-			new Backbone.Collection [
-				{ name: "TODO" }
-				{ name: "Link2" }
-				{ name: "Link3" }
-			]
 
 		getHeaderView: (links) ->
 			new Show.Headers
