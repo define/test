@@ -11,6 +11,7 @@
 
 	App.addInitializer ->
 		App.module("HeaderApp").start()
+		App.module("MainApp").start()
 		App.module("FooterApp").start()
 
 
