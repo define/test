@@ -1,3 +1,3 @@
 @Test.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
-	class Views.ItemView extends Backbone.ItemView
+	class Views.ItemView extends Marionette.ItemView
