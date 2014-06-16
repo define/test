@@ -1,1 +1,1 @@
-<a href="#"><%= @title %></a>
+<a href="#">Completed: <%= @completed %><%= @title %></a>

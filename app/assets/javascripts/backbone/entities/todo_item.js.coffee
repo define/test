@@ -8,9 +8,9 @@
 	API =
 		getTODO_Items: ->
 			new Entities.todo_itemCollection [
-				{ title: "TODO item 1" }
-				{ title: "TODO item 2" }
-				{ title: "TODO item 3" }
+				{ title: "TODO item 1", completed: false }
+				{ title: "TODO item 2", completed: false }
+				{ title: "TODO item 3", completed: true }
 			]
 
 	App.reqres.setHandler "todo_item:get_list", ->
