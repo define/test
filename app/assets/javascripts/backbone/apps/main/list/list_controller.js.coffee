@@ -10,6 +10,7 @@
 
 			@layout.on "show", =>
 				@panelRegion()
+				@mainRegion(itemsList)
 
 			App.mainRegion.show @layout
 
@@ -27,7 +28,6 @@
 				collection: todo_list
 
 		panelRegion: ->
-
 			panelView = @getPanelView()
 
 			console.log "showing panel view"
@@ -37,6 +37,10 @@
 				@newRegion()
 
 			@layout.panelRegion.show panelView
+
+		mainRegion: (items) ->
+			mainView = @getMainView(items)
+			@layout.itemsRegion.show mainView
 
 		getPanelView: ->
 			new List.Panel
