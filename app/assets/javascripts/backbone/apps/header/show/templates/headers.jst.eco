@@ -1,11 +1,11 @@
 <div id="header">
 	<div class="contain-to-grid">
 		<nav class="top-bar">
-			<h1>
+			<h3>
 				<a href="#">
 					Test
 				</a>
-			</h1>
+			</h3>
 			<section class="top-bar-section">
 				<ul class="right"></ul>
 			</section>
