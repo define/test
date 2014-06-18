@@ -1,9 +1,15 @@
+<div class="center">
+	<button id="new-todo" class="button radius small secondary">
+		<i class="general-enclosed foundicon-plus"></i>
+		Add TODO
+	</button>
+</div>
 <div id="main" class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
 			<div class="row">
 				<div class="pull-left">
-					<span class="brand">BackboneRails.com Demo</span>
+					<span class="brand">TODO Items test app</span>
 				</div>
 				<ul class="nav pull-right"></ul>
 			</div>
