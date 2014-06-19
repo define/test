@@ -3,21 +3,18 @@
 	List.Controller =
 
 		listMain: ->
-			console.log "1"
+			# get items collection
 			itemsList = App.request "todo_item:get_list"
 
 			@layout = @getLayoutView itemsList
 
+			# display views after showing layer
 			@layout.on "show", =>
 				@panelRegion()
 				@mainRegion(itemsList)
 
 			App.mainRegion.show @layout
 
-			console.log "2"
-
-			#mainView = @getMainView itemsList
-			#App.mainRegion.show mainView
 
 		getMainView: (itemsList) ->
 			new List.Items
@@ -32,7 +29,7 @@
 
 			console.log "showing panel view"
 
-			# attach handler to create new item action
+			# attach handler to create new item
 			panelView.on "create:item:action", =>
 				@newRegion()
 
@@ -50,7 +47,7 @@
 
 			console.log "request and showing view to create a new item"
 
-			# attach handler to cancel action
+			# attach handler to perform cancel action
 			newView.on "view:cancel:action", =>
 				@layout.newRegion.close()
 

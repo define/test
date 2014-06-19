@@ -2,6 +2,7 @@
 
 	New.Controller =
 
+		# creates and returns NewView
 		newTODO: ->
 			newView = @getNewView()
 
