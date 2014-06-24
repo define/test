@@ -1,1 +1,1 @@
-<a href="#">P:<%= @priority %> Completed: <%= @completed %><%= @title %></a>
+<a href="#">P:<%= @priority %> Completed: <%= @is_completed %><%= @name %></a>

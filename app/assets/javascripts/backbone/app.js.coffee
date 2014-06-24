@@ -1,7 +1,5 @@
 @Test = do (Backbone, Marionette) ->
 
-	@
-
 	App = new Marionette.Application
 
 	App.addRegions
@@ -18,5 +16,7 @@
 	App.on "initialize:after", ->
 		if Backbone.history
 			Backbone.history.start()
+
+	App.rootRoute = Routes.todo_index_path()
 
 	App
