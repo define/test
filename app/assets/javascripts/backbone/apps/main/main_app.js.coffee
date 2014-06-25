@@ -17,8 +17,8 @@
 		console.log "create new todo view"
 		API.newTODOItem()
 
-#	MainApp.on "start", ->
-#		API.showTodoItems()
+	MainApp.on "start", ->
+		API.showTodoItems()
 
 	App.addInitializer ->
 		new MainApp.Router
