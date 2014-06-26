@@ -1,0 +1,21 @@
+<div id="new-todo">
+	<div class="row">
+		<div class="large-12 columns">
+			<label>TODO title:</label>
+			<div class="large-6">
+				<input type="text" name="title" placeholder="Edit TODO" />
+			</div>
+
+		</div>
+	</div>
+	<footer>
+		<ul class = "inline-list">
+			<li>
+				<button id="update-item">Update</button>
+			</li>
+			<li>
+				<button id="cancel-item">Cancel</button>
+			</li>
+		</ul>
+	</footer>
+</div>

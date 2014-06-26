@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+﻿// This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
@@ -16,6 +16,7 @@
 //= require js-routes
 //= require_tree ./backbone/config
 //= require backbone/app
+//= require_tree ./backbone/controllers
 //= require_tree ./backbone/views
 //= require_tree ./backbone/entities
 //= require_tree ./backbone/apps

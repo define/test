@@ -10,10 +10,22 @@
 	API =
 		getTODO_Items: ->
 			#load items from server
+			console.log "todos_entities.getTODO_Items"
 			todos = new Entities.todo_itemCollection
 			todos.fetch
 				reset: true
 			todos
 
-	App.reqres.setHandler "todo_item:get_list", ->
+		getTODO_Item: (id) ->
+			member = new Entities.todo_item
+				id: id
+			member.fetch()
+			member
+
+	App.reqres.setHandler "todo_items:get_list", ->
+		console.log "todo_items.handler"
 		API.getTODO_Items()
+
+	App.reqres.setHandler "todo_item:get_item", (id) ->
+		console.log "todo_item.handler"
+		API.getTODO_Item id

@@ -1,20 +1,22 @@
 @Test.module "MainApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-	List.Controller =
+	class List.Controller extends App.Controllers.Base
 
-		listMain: ->
+		initialize: ->
 			# get items collection
-			itemsList = App.request "todo_item:get_list"
+			console.log "MainApp.List_initialize"
+			itemsList = App.request "todo_items:get_list"
+			App.execute "when:fetched", itemsList, =>
 
-			@layout = @getLayoutView itemsList
+				console.log "MainApp.List_initialized"
 
-			# display views after showing layer
-			@layout.on "show", =>
-				@panelRegion()
-				@mainRegion(itemsList)
+				@layout = @getLayoutView itemsList
 
-			App.mainRegion.show @layout
+				@listenTo @layout, "show", =>
+					@panelRegion()
+					@itemsRegion itemsList
 
+				@show @layout
 
 		getMainView: (itemsList) ->
 			new List.Items
@@ -35,9 +37,13 @@
 
 			@layout.panelRegion.show panelView
 
-		mainRegion: (items) ->
+		itemsRegion: (items) ->
 			mainView = @getMainView(items)
 			@layout.itemsRegion.show mainView
+
+			@listenTo mainView, "childview:todo:member:clicked", (child, args) ->
+				App.vent.trigger "todo:member:clicked", args.model
+
 
 		getPanelView: ->
 			new List.Panel

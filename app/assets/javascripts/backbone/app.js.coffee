@@ -22,4 +22,7 @@
 
 	App.rootRoute = Routes.todo_index_path()
 
+	App.reqres.setHandler "default:region", ->
+		App.mainRegion
+
 	App

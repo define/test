@@ -27,4 +27,5 @@
 
 		# define trigger that fires event when button Add was pressed
 		triggers:
-			"click #new-item" : "create:item:action"
+			"click #new-item"	: "create:item:action"
+			"click"				: "item:member:clicked"
