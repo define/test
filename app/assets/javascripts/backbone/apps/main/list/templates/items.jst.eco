@@ -2,9 +2,9 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<div class="row">
-				<div class="pull-left">
+				<!-- div class="pull-left">
 					<span class="brand">TODO Items test app</span>
-				</div>
+				</div -->
 				<ul class="nav pull-right"></ul>
 			</div>
 		</div>
