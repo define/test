@@ -11,10 +11,10 @@
 	<footer>
 	    <ul class = "inline-list">
            	<li>
-           	    <button id="save-new-item">Save</button>
+           	    <button id="save-new-item" class="button radius small">Save</button>
            	</li>
            	<li>
-           	    <button id="cancel-new-item">Cancel</button>
+           	    <button id="cancel-new-item" class="button radius small secondary">Cancel</button>
            	</li>
 	    </ul>
 	</footer>
