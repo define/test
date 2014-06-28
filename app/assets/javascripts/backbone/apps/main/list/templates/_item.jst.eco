@@ -1,1 +1,21 @@
-<a href="#">P:<%= @priority %> Completed: <%= @is_completed %><%= @name %></a>
+<div id="event-list" class="panel radius">
+    <div class="row" style="nowrap">
+        <div class="large-8 columns">
+            <% if @is_completed : %>
+                <span><s><%= @name %></s> </span>
+            <% end %>
+            <% if !@is_completed : %>
+                <span><%= @name %>  </span>
+            <% end %>
+        </div>
+        <div class="large-3 columns">
+            <% if @is_completed : %>
+                <span class="label">completed</span>
+            <% end %>
+        </div>
+        <div class="large-1 columns right">
+            <!-- %= if @priority: % -->
+            <img src="assets/images/high-priority.png">
+        </div>
+    </div>
+</div>
