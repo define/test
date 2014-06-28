@@ -1,12 +1,20 @@
-<div id="todo-list">
-	<div id="title-region"></div>
-	<section>
-		<div class="row">
-			<div id="panel-region" class="large-12 columns"></div>
-			<div id="new-region" class="large-12 columns"></div>
-		</div>
-	</section>
-	<section>
-		<div id="items-region" class="large-12 columns"></div>
-	</section>
+<div id="todo-list" class="large-12">
+	<div class="row">
+	    <div class="large-12 columns">
+            <div id="title-region" class="large-12 left">
+                <h5>TODO</h5>
+            </div>
+	    </div>
+	    <br>
+        <div class="large-6 medium-6 small-6 columns">
+            <div id="items-region" class="large-11 columns"></div>
+        </div>
+	    <div class="large-6 medium-6 small-6 columns">
+            <div class="row">
+                <div id="panel-region" class="large-12 columns"></div>
+                <br>
+                <div id="new-region" class="large-12 columns"></div>
+            </div>
+	    </div>
+	</div>
 </div>
