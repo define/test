@@ -42,3 +42,4 @@ config/secrets.yml
 .idea/dataSources.ids
 .idea/testapp.iml
 .idea/workspace.xml
+.idea
