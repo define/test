@@ -8,4 +8,4 @@
 	class Show.Headers extends App.Views.CompositeView
 		template: "header/show/templates/headers"
 		itemView: Show.Header
-		itemViewContainer: "ul"
+		itemViewContainer: "ul.right"
