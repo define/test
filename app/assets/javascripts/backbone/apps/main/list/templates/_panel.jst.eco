@@ -1,6 +1,6 @@
 <div class="left">
-	<button id="new-item" class="button radius small secondary">
+	<button id="new-item" class="button radius small">
 		<i class="general-enclosed foundicon-plus"></i>
-		Create new TODO item
+		add event
 	</button>
 </div>
