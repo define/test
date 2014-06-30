@@ -1,4 +1,4 @@
-@Test.module "MainApp.Edit", (Edit, App, Backbone, Marionette, $, _) ->
+﻿@Test.module "MainApp.Edit", (Edit, App, Backbone, Marionette, $, _) ->
 
 	class Edit.Controller extends App.Controllers.Base
 
@@ -11,8 +11,8 @@
 				App.vent.trigger "todo:updated", todo
 
 			App.execute "when:fetched", todo, =>
+				console.log "todo_fetched " + todo.id
 				@editView = @getEditView todo
-
 				@show @editView
 
 		getEditView: (todo) ->

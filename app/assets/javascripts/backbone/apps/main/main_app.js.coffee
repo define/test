@@ -15,16 +15,20 @@
 		newTODOItem: ->
 			MainApp.New.Controller.newTODO()
 
-		editItem: ->
+		editItem: (id, member) ->
 			new MainApp.Edit.Controller
+				id: id
+				todo: member
+
+#			MainApp.Edit.Controller.editItem member
 
 	App.reqres.setHandler "new:todo:view",  ->
 		console.log "create new todo view"
 		API.newTODOItem()
 
-	App.vent.on "todo:member:clicked", (member) ->
+	App.vent.on "item:member:clicked", (member) ->
 		App.navigate Routes.edit_todo_path(member.id)
-		API.edit member.id, member
+		API.editItem member.id, member
 
 	MainApp.on "start", ->
 		API.showTodoItems()

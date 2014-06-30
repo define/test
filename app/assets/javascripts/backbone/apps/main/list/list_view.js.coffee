@@ -14,6 +14,14 @@
 	class List.Item extends App.Views.ItemView
 		template: "main/list/templates/_item"
 		tagName: "li"
+		className: "item-member"
+
+		events:
+			"click" : -> @trigger "item:member:clicked", @model
+
+		# define trigger that fires event when item clicked
+		triggers:
+			"click"	: "item:member:clicked"
 
 	# displays collection of items
 	class List.Items extends App.Views.CompositeView
@@ -24,6 +32,7 @@
 	# contains commands: Add and etc
 	class List.Panel extends App.Views.ItemView
 		template: "main/list/templates/_panel"
+
 
 		# define trigger that fires event when button Add was pressed
 		triggers:

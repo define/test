@@ -19,7 +19,7 @@
 		getTODO_Item: (id) ->
 			member = new Entities.todo_item
 				id: id
-			member.fetch()
+			member.fetch
 			member
 
 	App.reqres.setHandler "todo_items:get_list", ->

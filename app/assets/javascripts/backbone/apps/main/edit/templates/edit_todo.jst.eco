@@ -1,21 +1,84 @@
-<div id="new-todo">
-	<div class="row">
-		<div class="large-12 columns">
-			<label>TODO title:</label>
-			<div class="large-6">
-				<input type="text" name="title" placeholder="Edit TODO" />
+<div id="edit-todo">
+	<fieldset>
+		<legend>Details</legend>
+		<div class="row">
+			<div class="large-3 columns">
+				<label class="right inline">Title</label>
 			</div>
-
+			<div class="large-9 columns">
+				<div class="large-5">
+					<input type="text" name="name" value="<%= @name %>" />
+				</div>
+			</div>
 		</div>
-	</div>
-	<footer>
-		<ul class = "inline-list">
-			<li>
-				<button id="update-item">Update</button>
-			</li>
-			<li>
-				<button id="cancel-item">Cancel</button>
-			</li>
-		</ul>
-	</footer>
+		<div class="row">
+			<div class="large-3 columns">
+				<label class="right inline">Is Completed</label>
+			</div>
+			<div class="large-9 columns">
+				<div class="large-5">
+					<input type="checkbox" name="is_completed" checked ="<%= @is_completed %>" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-3 columns">
+				<label class="right inline">Priority</label>
+			</div>
+			<div class="large-9 columns">
+				<div class="large-5">
+					<input type="text" name="priority"value="<%= @priority %>" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-3 columns">
+				<label class="right inline">Created</label>
+			</div>
+			<div class="large-9 columns">
+				<div class="large-5 left">
+					<input type="text" name="created_date" value="<%= @created_date %>" readonly="true" />
+				</div>
+				<div class="large-7 columns">
+					<h6 class="subheader hint">Internal</h6>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-3 columns">
+				<label class="right inline">Modified</label>
+			</div>
+			<div class="large-9 columns">
+				<div class="large-5 left">
+					<input type="text" name="modified_date" value="<%= @modified_date %>" readonly="true" />
+				</div>
+				<div class="large-7 columns">
+					<h6 class="subheader hint">Internal</h6>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-3 columns">
+				<label class="right inline">Completed</label>
+			</div>
+			<div class="large-9 columns">
+				<div class="large-5 left">
+					<input type="text" name="completed_date" value="<%= @completed_date %>" readonly="true" />
+				</div>
+				<div class="large-7 columns">
+					<h6 class="subheader hint">Internal</h6>
+				</div>
+			</div>
+		</div>
+	</fieldset>
 </div>
+<footer>
+	<ul class = "inline-list">
+		<li>
+			<button id="update-item">Update</button>
+		</li>
+		<li>
+			<button id="cancel-item">Cancel</button>
+		</li>
+	</ul>
+</footer>
