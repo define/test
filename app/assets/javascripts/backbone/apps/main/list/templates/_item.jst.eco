@@ -1,21 +1,20 @@
 <div id="event-list" class="panel radius">
     <div class="row" style="nowrap">
         <div class="large-9 columns">
-            <% if @is_completed: %>
+            <% if @is_completed %>
                 <span><s><%= @name %></s> </span>
-            <% else: %>
+            <% if !@is_completed: %>
                 <a href="#"><%= @name %></a>
             <% end %>
         </div>
         <div class="large-3 columns">
-            <% if @is_completed: %>
+            <% if @is_completed %>
                 <span class="label" class="right">completed</span>
-            <% else: %>
-                <% if @priority == 2: %>
+            <% if !@is_completed: %>
+                <% if @priority == 2 %>
                     <img src="assets/images/high-priority.png" class="right">
-                <% else: %>
+                <% if @priority != 2 %>
                     not
-                <% end %>
             <% end %>
         </div>
     </div>
