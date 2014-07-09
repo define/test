@@ -3,6 +3,7 @@
         <div class="large-9 columns">
             <% if @is_completed: %>
                 <span><s><%= @name %></s> </span>
+			<% end %>
             <% if !@is_completed: %>
                 <a href="#"><%= @name %></a>
             <% end %>
@@ -10,11 +11,14 @@
         <div class="large-3 columns">
             <% if @is_completed: %>
                 <span class="label" class="right">completed</span>
+			<% end %>
             <% if !@is_completed: %>
-                <% if @priority == 2 %>
+                <% if @priority == 2: %>
                     <img src="assets/images/high-priority.png" class="right">
-                <% if @priority != 2 %>
+				<% end %>
+                <% if @priority != 2: %>
                     not
+				<% end %>
             <% end %>
         </div>
     </div>
