@@ -16,8 +16,8 @@
 		tagName: "li"
 		className: "item-member"
 
-		events:
-			"click" : -> @trigger "item:member:clicked", @model
+		#events:  !!! SL opening item view by click works without this event
+		#	"click" : -> @trigger "item:member:clicked", @model
 
 		# define trigger that fires event when item clicked
 		triggers:
@@ -37,4 +37,4 @@
 		# define trigger that fires event when button Add was pressed
 		triggers:
 			"click #new-item"	: "create:item:action"
-			"click"				: "item:member:clicked"
+			#"click"				: "item:member:clicked" SL - it seems unnecessary here. All works with trigger in Item

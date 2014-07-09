@@ -5,6 +5,7 @@
 		modelEvents:
 				"updated" : "render"
 
-		# define trigger that fires event when button Add was pressed
-#		triggers:
+		# define triggers that fires event when button Add or Cancel was pressed
+		triggers:
+			"click #cancel-item" : "edit:view:cancel:action"
 #			"click #update-item" : "update:item:action"

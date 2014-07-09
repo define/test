@@ -5,4 +5,4 @@
 
 		# trigger to fire event when Cancel button was pressed
 		triggers:
-			"click #cancel-new-item" : "view:cancel:action"
+			"click #cancel-new-item" : "new:view:cancel:action"

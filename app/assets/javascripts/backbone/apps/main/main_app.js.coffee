@@ -30,6 +30,12 @@
 		App.navigate Routes.edit_todo_path(member.id)
 		API.editItem member.id, member
 
+	App.vent.on "edit:view:cancel:action", ->
+		# Cancel was pressed on Edit form - show items list
+		console.log "Cancel on edit view pressed - go back to the list view"
+		App.navigate Routes.todo_index_path()
+		API.showTodoItems()
+
 	MainApp.on "start", ->
 		API.showTodoItems()
 

@@ -36,7 +36,8 @@
 			console.log "request and showing view to create a new item"
 
 			# attach handler to perform cancel action
-			newView.on "view:cancel:action", =>
+			newView.on "new:view:cancel:action", =>
+				console.log "trigger new:view:cancel:action was fired"
 				@layout.newRegion.close()
 
 			@layout.newRegion.show newView
