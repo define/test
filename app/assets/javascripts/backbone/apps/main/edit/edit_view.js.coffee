@@ -6,8 +6,8 @@
 				"updated" : "render"
 
 		# define triggers that fires event when button Add or Cancel was pressed
-		triggers:
-			"click #cancel-item" : "edit:view:cancel:action"
+#		triggers:
+#			"click #cancel-item" : "edit:view:cancel:action"
 #			"click #update-item" : "update:item:action"
 
 		regions:
@@ -17,5 +17,9 @@
 		template: "main/edit/templates/edit_todo"
 
 #		form:
+#			buttons:
+#				primary: "foo"
+#				cancel: "bar cancel"
+#				placement: "left"
 #			footer: false
 #			focusFirstInput: false

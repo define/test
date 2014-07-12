@@ -2,12 +2,12 @@
 <div id="form-content-region"></div>
 <% if @footer: %>
 <footer>
-	<ul class = "inline-list">
+	<ul class = "inline-list <%= @buttons.placement %>">
 		<li>
-			<button id="update-item">Update</button>
+			<button data-form-button="primary" id="primary"><%= @buttons.primary %></button>
 		</li>
 		<li>
-			<button id="cancel-item">Cancel</button>
+			<button data-form-button="cancel" id="cancel"><%= @buttons.cancel %></button>
 		</li>
 	</ul>
 </footer>
