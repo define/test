@@ -20,6 +20,9 @@
 			member = new Entities.todo_item
 				id: id
 			member.fetch
+				reset: true
+
+			console.log "item loaded id: #{member.id} name #{member.name}"
 			member
 
 	App.reqres.setHandler "todo_items:get_list", ->
