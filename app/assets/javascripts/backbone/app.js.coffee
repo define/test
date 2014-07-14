@@ -16,9 +16,11 @@
 	App.on "initialize:after", ->
 		#if Backbone.history
 		#	Backbone.history.start()
+		console.log "initialize:after in App"
 		@startHistory()
-		console.log @rootRoute
+		console.log "@rootRoute ="+@rootRoute+" getCurrentRoute()= "+@getCurrentRoute()
 		@navigate(@rootRoute, trigger : true) unless @getCurrentRoute()
+#		@navigate("todo/1/edit", trigger : true) unless @getCurrentRoute()
 
 	App.rootRoute = Routes.todo_index_path()
 

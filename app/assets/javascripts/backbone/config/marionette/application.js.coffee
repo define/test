@@ -4,8 +4,7 @@ do (Backbone) ->
 
 		navigate: (route, options = {}) ->
 #			route = "#" + route if route.charAt(0) is "/"
-			console.log "navigate to "
-			console.log route
+			console.log "navigate to: " + route
 			Backbone.history.navigate route, options
 
 		getCurrentRoute: ->

@@ -6,6 +6,7 @@
 			# get items collection
 			console.log "MainApp.List_initialize"
 			itemsList = App.request "todo_items:get_list"
+
 			App.execute "when:fetched", itemsList, =>
 
 				console.log "MainApp.List_initialized"
