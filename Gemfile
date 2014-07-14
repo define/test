@@ -25,6 +25,9 @@ gem "oj"
 gem "gon"
 gem "js-routes"
 
+# add gem to enable debugging. Move it to the development category
+# gem "intellij-coffee-script-debugger", :git => "git://github.com/JetBrains/intellij-coffee-script-debugger.git"
+
 group :development, :test do
 	gem 'rails-dev-tweaks'
 end
