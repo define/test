@@ -1,4 +1,4 @@
-@Test.module "Components.Form", (Form, App, Backbone, Marionette, $, _) ->
+﻿@Test.module "Components.Form", (Form, App, Backbone, Marionette, $, _) ->
 
 	class Form.FormWrapper extends App.Views.Layout
 		template: "form/form"
@@ -15,7 +15,7 @@
 
 		serializeData: ->
 			footer: @options.config.footer
-			buttons: @options.buttons.toJSON()
+			buttons: @options.config.buttons
 
 		onShow: ->
 			_.defer =>
@@ -23,7 +23,7 @@
 				@buttonPlacement()
 
 		buttonPlacement: ->
-			@ui.buttonContainer.addClass @options.buttons.placement
+			@ui.buttonContainer.addClass @options.config.buttons.placement
 
 		focusFirstInput: ->
 			@$(":input:visible:enabled:first").focus()

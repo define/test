@@ -1,14 +1,15 @@
-<% console.info "form options", @%>
+﻿<% console.info "form options", @%>
 <% console.info "buttons", @buttons%>
 <div id="form-content-region"></div>
 <% if @footer: %>
 	<footer>
-		<ul class = "inline-list">
-			<% for button in @buttons:%>
+	<ul class = "inline-list <%= @buttons.placement %>">
 				<li>
-					<button data-form-button="<%= button.type %>" class="<%= button.className %>"><%= button.text %></button>
+			<button data-form-button="primary" id="primary"><%= @buttons.primary %></button>
+		</li>
+		<li>
+			<button data-form-button="cancel" id="cancel"><%= @buttons.cancel %></button>
 				</li>
-			<% end %>
 		</ul>
 	</footer>
 <% end %>

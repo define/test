@@ -1,4 +1,4 @@
-@Test.module "Components.Form", (Form, App, Backbone, Marionette, $, _) ->
+﻿@Test.module "Components.Form", (Form, App, Backbone, Marionette, $, _) ->
 
 	class Form.Controller extends Marionette.Controller
 
@@ -16,7 +16,7 @@
 		getFormLayout: (options = {}) ->
 			config = @getDefaultConfig _.result(@contentView, "form")
 
-			buttons = @getButtons config.buttons
+			buttons = @getDefaultButtons config.buttons
 
 			new Form.FormWrapper
 				config: config
@@ -29,8 +29,12 @@
 				focusFirstInput: true
 				buttons: @getDefaultButtons config.buttons
 
-		getButtons: (buttons = {}) ->
-			App.request("form:button:entities", buttons, @contentView.model) unless buttons is false
+		getDefaultButtons: (buttons = {}) ->
+			_.defaults buttons,
+				primary: "Save"
+				cancel: "Cancel"
+				placement: "right"
+
 
 		onClose: ->
 			console.log "onClose", @

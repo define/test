@@ -1,4 +1,4 @@
-@Test.module "MainApp", (MainApp, App, Backbone, Marionette, $, _) ->
+﻿@Test.module "MainApp", (MainApp, App, Backbone, Marionette, $, _) ->
 	@startWithParent = false
 
 	class MainApp.Router extends Marionette.AppRouter
@@ -17,11 +17,11 @@
 
 		editItem: (id, member) ->
 			console.log "MainApp.editItem()"
-			new MainApp.Edit.Controller
-				id: id
-				todo: member
+#			new MainApp.Edit.Controller
+#				id: id
+#				todo: member
 
-#			MainApp.Edit.Controller.editItem member
+			MainApp.Edit.Controller.edit id, member
 
 	App.reqres.setHandler "new:todo:view",  ->
 		console.log "create new todo view"
