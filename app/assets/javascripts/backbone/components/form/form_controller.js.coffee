@@ -16,9 +16,12 @@
 		getFormLayout: (options = {}) ->
 			config = @getDefaultConfig _.result(@contentView, "form")
 
+			buttons = @getButtons config.buttons
+
 			new Form.FormWrapper
 				config: config
 				model: @contentView.model
+				buttons: buttons
 
 		getDefaultConfig: (config = {}) ->
 			_.defaults config,
@@ -26,13 +29,8 @@
 				focusFirstInput: true
 				buttons: @getDefaultButtons config.buttons
 
-		getDefaultButtons: (buttons = {}) ->
-			_.defaults buttons,
-				primary: "Save"
-				cancel: "Cancel"
-				placement: "right
-
-"
+		getButtons: (buttons = {}) ->
+			App.request("form:button:entities", buttons, @contentView.model) unless buttons is false
 
 		onClose: ->
 			console.log "onClose", @
