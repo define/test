@@ -9,13 +9,14 @@
 
 	API =
 		showTodoItems: ->
-			console.log "show_controller"
+			console.log "MainApp.showTodoItems()"
 			new MainApp.List.Controller
 
 		newTODOItem: ->
 			MainApp.New.Controller.newTODO()
 
 		editItem: (id, member) ->
+			console.log "MainApp.editItem()"
 			new MainApp.Edit.Controller
 				id: id
 				todo: member
@@ -36,8 +37,10 @@
 		App.navigate Routes.todo_index_path()
 		API.showTodoItems()
 
-	MainApp.on "start", ->
-		API.showTodoItems()
+#	this call is unnecessary now, we open list by default when no client's route is specified
+#	MainApp.on "start", ->
+#		console.log "MainApp on start"
+#		API.showTodoItems() this call is unnecessary now, we open list as default rout
 
 	App.addInitializer ->
 		new MainApp.Router
