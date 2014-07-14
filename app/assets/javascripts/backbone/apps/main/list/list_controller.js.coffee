@@ -50,6 +50,9 @@
 			mainView.on "childview:item:member:clicked", (child, args) ->
 				App.vent.trigger "item:member:clicked", args.model
 
+			@listenTo mainView, "childview:delete:item", (args) ->
+				alert "delete item with id=#{args.model.id} message now processing in controller"
+
 #			@listenTo mainView, "childview:item:member:clicked", (child, args) ->
 #				App.vent.trigger "item:member:clicked", args.model
 

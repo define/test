@@ -16,12 +16,20 @@
 		tagName: "li"
 		className: "item-member"
 
-		#events:  !!! SL opening item view by click works without this event
-		#	"click" : -> @trigger "item:member:clicked", @model
+		events:
+			"click #btn-delete" : "performDelete"
+		#	"click" : -> @trigger "item:member:clicked", @model !!! SL opening item view by click works without this event
 
 		# define trigger that fires event when item clicked
 		triggers:
-			"click"	: "item:member:clicked"
+#			"click"	: "item:member:clicked"
+			"click #btn-edit" : "item:member:clicked"
+
+		performDelete: (e) ->
+			e.stopPropagation
+			console.log "performDelete"
+			alert "delete action will be passed to the controller"
+			@trigger "delete:item"
 
 	# displays collection of items
 	class List.Items extends App.Views.CompositeView
