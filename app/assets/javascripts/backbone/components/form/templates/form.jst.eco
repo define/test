@@ -1,0 +1,14 @@
+<% console.info "form options", @%>
+<div id="form-content-region"></div>
+<% if @footer: %>
+<footer>
+	<ul class = "inline-list">
+		<li>
+			<button id="update-item">Update</button>
+		</li>
+		<li>
+			<button id="cancel-item">Cancel</button>
+		</li>
+	</ul>
+</footer>
+<% end %>
