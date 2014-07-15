@@ -9,6 +9,22 @@
 
 			@listenTo @formLayout, "show", @formContentRegion
 			@listenTo @formLayout, "close", @close
+			@listenTo @formLayout, "form:submit", @formSubmit
+			@listenTo @formLayout, "form:cancel", @formCancel
+
+		formCancel: ->
+			@contentView.triggerMethod "form:cancel"
+
+		formSubmit: ->
+			data = Backbone.Syphon.serialize @formLayout
+			if @contentView.triggerMethod("form:submit", data) isnt false
+				console.log("form submit")
+				console.log(data)
+				model = @contentView.model
+				@processFormSubmit data, model
+
+		processFormSubmit: (data, model) ->
+			model.save data
 
 		formContentRegion: ->
 			@formLayout.formContentRegion.show @contentView

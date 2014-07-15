@@ -13,6 +13,10 @@
 		ui:
 			buttonContainer: "ul.inline-list"
 
+		triggers:
+			"submit" 							: "form:submit"
+			"click [data-form-button='cancel']"	: "form:cancel"
+
 		serializeData: ->
 			footer: @options.config.footer
 			buttons: @options.config.buttons ? false

@@ -13,13 +13,10 @@
                 <span class="label" class="right">completed</span>
 			<% end %>
             <% if !@is_completed: %>
-                <% if @priority == 2: %>
+                <% if @priority > 1: %>
                     <img src="assets/images/high-priority.png" class="right">
 				<% end %>
-                <% if @priority != 2: %>
-                    not
-				<% end %>
-            <% end %>
+			<% end %>
         </div>
         <div class="button-group">
 			<ul class="inline-list">

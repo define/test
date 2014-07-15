@@ -6,6 +6,10 @@
 
 		edit: (id, todo) ->
 			todo or= App.request "todo_item:get_item", id
+			todo.on "all", (e) -> console.log  e
+
+			todo.on "updated", ->
+				App.vent.trigger "todo:updated", todo
 
 			App.execute "when:fetched", todo, =>
 				@layout = @getLayoutView todo
@@ -20,6 +24,11 @@
 		formRegion: (todo) ->
 			editView = @getEditView todo
 
+			# if user pressed Cancel - catch it and fire event
+			editView.on "form:cancel", ->
+				console.log "catched pressing Cancel in edit.Controller"
+				App.vent.trigger "todo:canceled", todo
+
 			formView = App.request "form:wrapper", editView
 
 			@layout.formRegion.show formView
@@ -31,23 +40,3 @@
 		getEditView: (todo) ->
 			new Edit.Todo
 				model:todo
-
-
-###	# creates and returns EditView
-		initialize: (options) ->
-			{ todo, id } = options
-			todo or= App.request "todo_item:get_item", id
-
-			@listenTo todo, "updated", ->
-				App.vent.trigger "todo:updated", todo
-
-			App.execute "when:fetched", todo, =>
-						console.log "todo_fetched " + todo.id
-				@editView = @getEditView todo
-
-						# if user pressed Cancel - catch it and fire event
-				@editView.on "edit:view:cancel:action" ,  ->
-					console.log "catched pressing Cancel in edit.Controller"
-					App.vent.trigger "edit:view:cancel:action"
-
-						@show @editView###
