@@ -15,12 +15,12 @@
 
 		serializeData: ->
 			footer: @options.config.footer
-			buttons: @options.config.buttons
+			buttons: @options.config.buttons ? false
 
 		onShow: ->
 			_.defer =>
 				@focusFirstInput() if @options.config.focusFirstInput
-				@buttonPlacement()
+				@buttonPlacement() if @options.config.buttons
 
 		buttonPlacement: ->
 			@ui.buttonContainer.addClass @options.config.buttons.placement
