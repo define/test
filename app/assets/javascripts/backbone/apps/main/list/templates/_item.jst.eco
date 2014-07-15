@@ -21,11 +21,10 @@
 				<% end %>
             <% end %>
         </div>
-        <div class ="large-6 columns">
-            <button class="btn btn-small" id="btn-delete"></i>Delete</button>
-        </div>
-        <div class ="large-6 columns">
-            <button class="btn btn-small" id="btn-edit"></i>Edit</button>
+        <div class ="button-group">
+            <button class="btn btn-mini" id="btn-toggle-completed"> <i class="icon-check"></i> Completed</button>
+            <button class="btn btn-mini" id="btn-delete">Delete</button>
+            <button class="btn btn-mini" id="btn-edit">Edit</button>
         </div>
     </div>
 </div>

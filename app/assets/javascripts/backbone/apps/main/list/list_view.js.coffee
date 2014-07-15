@@ -16,6 +16,9 @@
 		tagName: "li"
 		className: "item-member"
 
+		modelEvents:
+			"change": "render" # render item when model was changed (ie when user toggles is_completed state)
+
 		events:
 			"click #btn-delete" : "performDelete"
 		#	"click" : -> @trigger "item:member:clicked", @model !!! SL opening item view by click works without this event
@@ -24,6 +27,7 @@
 		triggers:
 #			"click"	: "item:member:clicked"
 			"click #btn-edit" : "item:member:clicked"
+			"click #btn-toggle-completed" : "item:toggle:completed"
 
 		performDelete: (e) ->
 			e.stopPropagation
@@ -40,7 +44,6 @@
 	# contains commands: Add and etc
 	class List.Panel extends App.Views.ItemView
 		template: "main/list/templates/_panel"
-
 
 		# define trigger that fires event when button Add was pressed
 		triggers:

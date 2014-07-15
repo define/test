@@ -53,6 +53,10 @@
 			@listenTo mainView, "childview:delete:item", (args) ->
 				alert "delete item with id=#{args.model.id} message now processing in controller"
 
+			@listenTo mainView, "childview:item:toggle:completed", (args) ->
+				console.log "list controller: toggling priority"
+				args.model.set("is_completed", ! args.model.get "is_completed")
+
 #			@listenTo mainView, "childview:item:member:clicked", (child, args) ->
 #				App.vent.trigger "item:member:clicked", args.model
 
