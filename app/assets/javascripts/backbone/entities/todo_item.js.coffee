@@ -28,9 +28,14 @@
 			member
 
 	App.reqres.setHandler "todo_items:get_list", ->
-		console.log "todo_items.handler"
+		console.log "processing todo_items:get_list"
 		API.getTODO_Items()
 
 	App.reqres.setHandler "todo_item:get_item", (id) ->
-		console.log "todo_item.handler"
+		console.log "processig todo_item:get_item"
 		API.getTODO_Item id
+
+	App.reqres.setHandler "todo_item:create", ->
+		console.log "processing todo_item:create"
+		new Entities.todo_item
+			id: _.uniqueId()

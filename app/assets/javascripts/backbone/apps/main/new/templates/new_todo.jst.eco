@@ -1,21 +1,22 @@
-<div id="new-todo">
-	<div class="row">
-		<div class="large-12 columns">
-			<label>TODO title:</label>
-			<div class="large-6">
-				<input type="text" name="title" placeholder="Creating TODO title" />
-			</div>
-
-		</div>
-	</div>
-	<footer>
-	    <ul class = "inline-list">
-           	<li>
-           	    <button id="save-new-item" class="button radius small">Save</button>
-           	</li>
-           	<li>
-           	    <button id="cancel-new-item" class="button radius small secondary">Cancel</button>
-           	</li>
-	    </ul>
-	</footer>
-</div>
+<form>
+    <div id="new-todo">
+        <div class="row">
+            <div class="large-12 columns">
+                <label>TODO title:</label>
+                <div class="large-6">
+                    <input type="text" name="name" value="<%= @name %>" placeholder="Creating TODO title" />
+                </div>
+            </div>
+        </div>
+        <footer>
+            <ul class = "inline-list">
+                <li>
+                    <button id="save-new-item" class="button radius small">Save</button>
+                </li>
+                <li>
+                    <button id="cancel-new-item" class="button radius small secondary">Cancel</button>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</form>

@@ -13,7 +13,8 @@
 			new MainApp.List.Controller
 
 		newTODOItem: ->
-			MainApp.New.Controller.newTODO()
+			newView = MainApp.New.Controller.newTODO()
+			newView
 
 		editItem: (id, member) ->
 			console.log "MainApp.editItem()"

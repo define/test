@@ -5,17 +5,17 @@
 		initialize: ->
 			# get items collection
 			console.log "MainApp.List_initialize"
-			itemsList = App.request "todo_items:get_list"
+			@itemsList = App.request "todo_items:get_list"
 
-			App.execute "when:fetched", itemsList, =>
+			App.execute "when:fetched", @itemsList, =>
 
 				console.log "MainApp.List_initialized"
 
-				@layout = @getLayoutView itemsList
+				@layout = @getLayoutView @itemsList
 
 				@listenTo @layout, "show", =>
 					@panelRegion()
-					@itemsRegion itemsList
+					@itemsRegion @itemsList
 
 				@show @layout
 
@@ -39,6 +39,11 @@
 			# attach handler to perform cancel action
 			newView.on "new:view:cancel:action", =>
 				console.log "trigger new:view:cancel:action was fired"
+				@layout.newRegion.close()
+
+			@listenTo newView, "new:view:save:action", (model) ->
+				console.log "message: new:view:save:action id=#{model.id} name=#{model.get("name")}"
+				@itemsList.add(model)
 				@layout.newRegion.close()
 
 			@layout.newRegion.show newView
