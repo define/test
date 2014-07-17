@@ -3,7 +3,7 @@
 	class Edit.Layout extends App.Views.Layout
 		template: "main/edit/templates/edit_layout"
 		modelEvents:
-				"updated" : "render"
+			"updated" : "render"
 
 		# define triggers that fires event when button Add or Cancel was pressed
 #		triggers:
@@ -15,6 +15,11 @@
 
 	class Edit.Todo extends App.Views.ItemView
 		template: "main/edit/templates/edit_todo"
+
+		#catch formSubmit. return false - prevent from passing submit further
+#		onFormSubmit: (data) ->
+#			console.log "Edit.todo onFormSubmit", data
+#			false
 
 #		form:
 #			buttons:

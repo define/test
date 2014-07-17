@@ -15,6 +15,7 @@
 //= require lib/marionette
 //= require vendor/syphon
 //= require js-routes
+//= require_tree ./vendor
 //= require_tree ./backbone/config
 //= require backbone/app
 //= require_tree ./backbone/controllers

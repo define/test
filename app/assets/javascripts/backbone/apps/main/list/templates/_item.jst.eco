@@ -13,18 +13,17 @@
                 <span class="label" class="right">completed</span>
 			<% end %>
             <% if !@is_completed: %>
-                <% if @priority == 2: %>
+                <% if @priority > 1: %>
                     <img src="assets/images/high-priority.png" class="right">
 				<% end %>
-                <% if @priority != 2: %>
-                    not
-				<% end %>
-            <% end %>
+			<% end %>
         </div>
-        <div class ="button-group">
-            <button class="btn btn-mini" id="btn-toggle-completed"> <i class="icon-check"></i> Completed</button>
-            <button class="btn btn-mini" id="btn-delete">Delete</button>
-            <button class="btn btn-mini" id="btn-edit">Edit</button>
+        <div class="button-group">
+			<ul class="inline-list">
+				<li><button class="button radius small" id="btn-toggle-completed"> <i class="icon-check"></i> Completed</button></li>
+				<li><button class="button radius small" id="btn-delete">Delete</button></li>
+				<li><button class="button radius small" id="btn-edit">Edit</button></li>
+			</ul>
         </div>
     </div>
 </div>

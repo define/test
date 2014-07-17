@@ -1,2 +1,10 @@
-<div id="form-region">
+<div id="edit-todo-layout">
+	<section>
+		<div class="row">
+			<div class="large-12 columns">
+				<h3>Edit</h3>
+				<div id="form-region"></div>
+			</div>
+		</div>
+	</section>
 </div>

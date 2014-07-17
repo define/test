@@ -17,7 +17,7 @@
 				</div>
 				<div class="large-9 columns">
 					<div class="large-5">
-						<input type="checkbox" name="is_completed" checked ="<%= @is_completed %>" />
+						<input type="checkbox" name="is_completed" <% if @is_completed: %>checked="true"<% end %> />
 					</div>
 				</div>
 			</div>
