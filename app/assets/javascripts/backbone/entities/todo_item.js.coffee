@@ -38,4 +38,4 @@
 	App.reqres.setHandler "todo_item:create", ->
 		console.log "processing todo_item:create"
 		new Entities.todo_item
-			id: _.uniqueId()
+#			id: _.uniqueId()

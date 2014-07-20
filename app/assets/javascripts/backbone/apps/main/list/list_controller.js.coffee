@@ -43,7 +43,8 @@
 
 			@listenTo newView, "new:view:save:action", (model) ->
 				console.log "message: new:view:save:action id=#{model.id} name=#{model.get("name")}"
-				@itemsList.add(model)
+				@itemsList.create(model)
+#				@itemsList.save()
 				@layout.newRegion.close()
 
 			@layout.newRegion.show newView
