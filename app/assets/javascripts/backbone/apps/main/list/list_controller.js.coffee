@@ -60,14 +60,20 @@
 				alert "delete item with id=#{args.model.id} message now processing in controller"
 
 			@listenTo mainView, "childview:item:toggle:completed", (args) ->
-				console.log "list controller: toggling priority"
-				args.model.set("is_completed", ! args.model.get "is_completed")
+				console.log "list controller: toggling completed"
+				@processSetCompleted(args.model)
+#				args.model.set("is_completed", ! args.model.get "is_completed")
 
 #			@listenTo mainView, "childview:item:member:clicked", (child, args) ->
 #				App.vent.trigger "item:member:clicked", args.model
 
 			@layout.itemsRegion.show mainView
 
+		processSetCompleted: (model) ->
+			model.set("is_completed", ! model.get "is_completed")
+			data = []
+			data.push { is_completed: model.get "is_completed" }
+			model.save data
 
 		getMainView: (itemsList) ->
 			new List.Items
