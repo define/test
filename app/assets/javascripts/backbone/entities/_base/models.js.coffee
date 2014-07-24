@@ -5,6 +5,11 @@
 		save: (data, options = {}) ->
 			isNew = @isNew()
 
+			data or= []
+			modified = new Date().toISOString()
+			data.modified_date = modified
+			data.created_date = modified if isNew
+
 			_.defaults options,
 				wait: true
 				success: _.bind(@saveSuccess, @, isNew)
