@@ -70,9 +70,16 @@
 			@layout.itemsRegion.show mainView
 
 		processSetCompleted: (model) ->
-			model.set("is_completed", ! model.get "is_completed")
+			isCompleted = !model.get "is_completed"
+			completedDate = null
+			completedDate = new Date().toISOString() if isCompleted
+
+			model.set("is_completed", isCompleted)
+			model.set("completed_date", completedDate)
+
 			data = []
-			data.push { is_completed: model.get "is_completed" }
+			data.push { is_completed: isCompleted }
+			data.push { completed_date: completedDate }
 			model.save data
 
 		getMainView: (itemsList) ->
