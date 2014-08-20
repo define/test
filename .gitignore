@@ -43,3 +43,6 @@ config/secrets.yml
 .idea/testapp.iml
 .idea/workspace.xml
 .idea
+/js/app_common.js
+/js/templates.js
+/js/application.js
