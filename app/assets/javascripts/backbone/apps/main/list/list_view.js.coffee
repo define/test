@@ -32,7 +32,7 @@
 		performDelete: (e) ->
 			e.stopPropagation
 			console.log "performDelete"
-			alert "delete action will be passed to the controller"
+#			alert "delete action will be passed to the controller"
 			@trigger "delete:item"
 
 	# displays collection of items
