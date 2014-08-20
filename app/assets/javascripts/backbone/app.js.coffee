@@ -22,7 +22,11 @@
 		@navigate(@rootRoute, trigger : true) unless @getCurrentRoute()
 #		@navigate("todo/1/edit", trigger : true) unless @getCurrentRoute()
 
-	App.rootRoute = Routes.todo_index_path()
+	App.rootRoute = "todo" #Routes.todo_index_path()
+
+	App.Constants = {
+		base_url : "http://127.0.0.1:3000/"
+	}
 
 	App.reqres.setHandler "default:region", ->
 		App.mainRegion

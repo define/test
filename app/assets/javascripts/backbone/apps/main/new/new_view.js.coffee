@@ -21,7 +21,12 @@
 #			save values from form into model and send to the backend
 			data = Backbone.Syphon.serialize @
 			@model.set data
-			@model.save data
+#			@model.save data - now save is performed in list_controller
+#			@model.fetch
+#				reset : true
+#				async: false
+#				success: (model, data) -> console.log( JSON.stringify(data))
 
+			console.log @model
 #			send message that new item was created
 			@trigger "new:view:save:action", @model

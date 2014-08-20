@@ -5,6 +5,9 @@
 		initialize: ->
 			# get items collection
 			console.log "MainApp.List_initialize"
+			@loadItemsAndShow()
+
+		loadItemsAndShow: ->
 			@itemsList = App.request "todo_items:get_list"
 
 			App.execute "when:fetched", @itemsList, =>
@@ -43,8 +46,12 @@
 
 			@listenTo newView, "new:view:save:action", (model) ->
 				console.log "message: new:view:save:action id=#{model.id} name=#{model.get("name")}"
+#				@loadItemsAndShow()
+				model.save
 				@itemsList.create(model)
 #				@itemsList.save()
+#				@itemsList.fetch()
+#				@itemsList.add model
 				@layout.newRegion.close()
 
 			@layout.newRegion.show newView
@@ -58,6 +65,8 @@
 
 			@listenTo mainView, "childview:delete:item", (args) ->
 				alert "delete item with id=#{args.model.id} message now processing in controller"
+				args.model.destroy()
+				@itemsList.remove args.model
 
 			@listenTo mainView, "childview:item:toggle:completed", (args) ->
 				console.log "list controller: toggling completed"

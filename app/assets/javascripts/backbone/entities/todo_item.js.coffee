@@ -1,11 +1,11 @@
 @Test.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
 
 	class Entities.todo_item extends App.Entities.Model
-		urlRoot: -> Routes.todo_index_path()
+		urlRoot: -> App.Constants.base_url + App.rootRoute
 
 	class Entities.todo_itemCollection extends App.Entities.Collection
 		model : Entities.todo_item
-		url: -> Routes.todo_index_path()
+		url: -> App.Constants.base_url + App.rootRoute
 
 	API =
 		getTODO_Items: ->
